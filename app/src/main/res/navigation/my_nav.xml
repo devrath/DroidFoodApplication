@@ -5,5 +5,19 @@
     android:id="@+id/my_nav"
     app:startDestination="@id/recipesFragment">
 
-
+    <fragment
+        android:id="@+id/recipesFragment"
+        android:name="com.demo.code.fragments.RecipesFragment"
+        android:label="Recipes"
+        tools:layout="@layout/fragment_recipes" />
+    <fragment
+        android:id="@+id/favoriteRecipesFragment"
+        android:name="com.demo.code.fragments.FavoriteRecipesFragment"
+        android:label="Favorites"
+        tools:layout="@layout/fragment_favorite_recipes" />
+    <fragment
+        android:id="@+id/foodJokeFragment"
+        android:name="com.demo.code.fragments.FoodJokeFragment"
+        android:label="Food Joke"
+        tools:layout="@layout/fragment_food_joke" />
 </navigation>
