@@ -1,19 +1,23 @@
 package com.demo.code.ui.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.demo.code.adapters.RecipesAdapter
 import com.demo.code.databinding.FragmentRecipesBinding
 import com.demo.code.util.NetworkResult
+import com.demo.code.util.observeOnce
 import com.demo.code.vm.MainViewModel
 import com.demo.code.vm.RecipesViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class RecipesFragment  : Fragment() {
@@ -46,6 +50,20 @@ class RecipesFragment  : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
         requestApiData()
+    }
+
+    private fun readDatabase() {
+        lifecycleScope.launch {
+            mainViewModel.readRecipes.observeOnce(viewLifecycleOwner) { database ->
+                if (database.isNotEmpty()) {
+                    Log.d("RecipesFragment", "readDatabase called!")
+                    mAdapter.setData(database[0].foodRecipe)
+                    hideShimmerEffect()
+                } else {
+                    requestApiData()
+                }
+            }
+        }
     }
 
     private fun requestApiData() {
