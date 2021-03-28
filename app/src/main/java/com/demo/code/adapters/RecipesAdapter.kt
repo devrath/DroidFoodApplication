@@ -1,10 +1,15 @@
 package com.demo.code.adapters
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.demo.code.R
 import com.demo.code.databinding.RecipesRowLayoutBinding
 import com.demo.code.models.FoodRecipe
 import com.demo.code.models.Result
@@ -32,12 +37,37 @@ class RecipesAdapter () : RecyclerView.Adapter<RecipesAdapter.ViewHolder>() {
                 binding.descriptionTextView.text = this.summary
                 binding.heartTextView.text = this.aggregateLikes.toString()
                 binding.clockTextView.text = this.readyInMinutes.toString()
+                applyVeganColor(binding.leafImageView,this.vegan)
+                applyVeganColor(binding.leafTextView,this.vegan)
             }
         }
     }
 
     override fun getItemCount(): Int {
         return recipieList.size
+    }
+
+    fun applyVeganColor(view: View, vegan: Boolean) {
+        if(vegan){
+            when(view){
+                is TextView -> {
+                    view.setTextColor(
+                        ContextCompat.getColor(
+                            view.context,
+                            R.color.green
+                        )
+                    )
+                }
+                is ImageView -> {
+                    view.setColorFilter(
+                        ContextCompat.getColor(
+                            view.context,
+                            R.color.green
+                        )
+                    )
+                }
+            }
+        }
     }
 
     fun setData(newData: FoodRecipe){
