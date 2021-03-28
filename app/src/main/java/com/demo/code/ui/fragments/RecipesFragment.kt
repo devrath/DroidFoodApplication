@@ -5,7 +5,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
@@ -72,15 +71,14 @@ class RecipesFragment  : Fragment() {
             when(response){
                 is NetworkResult.Success -> {
                     hideShimmerEffect()
-                    response.data?.let { mAdapter.setData(it) }
+                    response.data?.let {
+                        mAdapter.setData(it)
+                        displayView()
+                    }
                 }
                 is NetworkResult.Error -> {
                     hideShimmerEffect()
-                    Toast.makeText(
-                        requireContext(),
-                        response.message.toString(),
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    noConnectivityErrorView(response.message.toString())
                 }
                 is NetworkResult.Loading ->{
                     showShimmerEffect()
@@ -101,6 +99,21 @@ class RecipesFragment  : Fragment() {
 
     private fun hideShimmerEffect() {
         binding.recyclerview.hideShimmer()
+    }
+
+    private fun noConnectivityErrorView(message: String) {
+        binding.errorTextView.text = message
+        binding.errorTextView.visibility = View.VISIBLE
+        binding.errorImageView.visibility = View.VISIBLE
+        binding.floatingActionButton.visibility = View.GONE
+        binding.recyclerview.visibility = View.GONE
+    }
+
+    private fun displayView() {
+        binding.errorTextView.visibility = View.GONE
+        binding.errorImageView.visibility = View.GONE
+        binding.floatingActionButton.visibility = View.VISIBLE
+        binding.recyclerview.visibility = View.VISIBLE
     }
 
 
