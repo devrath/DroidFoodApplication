@@ -32,7 +32,7 @@ class RecipesAdapter () : RecyclerView.Adapter<RecipesAdapter.ViewHolder>() {
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         with(holder){
             with(recipieList[position]){
-                binding.recipeImageView.load(this.image){crossfade(true).crossfade(400)}
+                binding.recipeImageView.load(this.image){crossfade(true).crossfade(400).error(R.drawable.ic_error_placeholder)}
                 binding.titleTextView.text = this.title
                 binding.descriptionTextView.text = this.summary
                 binding.heartTextView.text = this.aggregateLikes.toString()
