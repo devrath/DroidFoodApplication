@@ -1,4 +1,4 @@
-package com.demo.code.ui.fragments.recipes
+package com.demo.code.ui.fragments.recipes.screen
 
 import android.os.Bundle
 import android.util.Log
@@ -11,10 +11,9 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.demo.code.adapters.RecipesAdapter
 import com.demo.code.databinding.FragmentRecipesBinding
+import com.demo.code.ui.activities.MainViewModel
 import com.demo.code.util.NetworkResult
 import com.demo.code.util.observeOnce
-import com.demo.code.vm.MainViewModel
-import com.demo.code.vm.RecipesViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 

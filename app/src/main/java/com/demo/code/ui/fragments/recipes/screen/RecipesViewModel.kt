@@ -1,4 +1,4 @@
-package com.demo.code.vm
+package com.demo.code.ui.fragments.recipes.screen
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
