@@ -1,4 +1,4 @@
-package com.demo.code.ui.fragments
+package com.demo.code.ui.fragments.recipes
 
 import android.os.Bundle
 import android.util.Log
@@ -36,7 +36,6 @@ class RecipesFragment  : Fragment() {
         recipesViewModel = ViewModelProvider(requireActivity()).get(RecipesViewModel::class.java)
     }
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -57,7 +56,7 @@ class RecipesFragment  : Fragment() {
                 if (database.isNotEmpty()) {
                     Log.d("RecipesFragment", "readDatabase called!")
                     mAdapter.setData(database[0].foodRecipe)
-                    hideShimmerEffect()
+                    displayShimmerView(displayShimmerView = false)
                 } else {
                     requestApiData()
                 }
@@ -66,54 +65,58 @@ class RecipesFragment  : Fragment() {
     }
 
     private fun requestApiData() {
-        mainViewModel.getRecipes(recipesViewModel.applyQueries())
-        mainViewModel.recipesResponse.observe(viewLifecycleOwner, { response ->
-            when(response){
-                is NetworkResult.Success -> {
-                    hideShimmerEffect()
-                    response.data?.let {
-                        mAdapter.setData(it)
-                        displayView()
+        mainViewModel.apply {
+            getRecipes(recipesViewModel.applyQueries())
+            recipesResponse.observe(viewLifecycleOwner, { response ->
+                when(response){
+                    is NetworkResult.Success -> {
+                        displayShimmerView(displayShimmerView = false)
+                        response.data?.let {
+                            mAdapter.setData(it)
+                            displayView()
+                        }
+                    }
+                    is NetworkResult.Error -> {
+                        displayShimmerView(displayShimmerView = false)
+                        noConnectivityErrorView(response.message.toString())
+                    }
+                    is NetworkResult.Loading ->{
+                        displayShimmerView(displayShimmerView = true)
                     }
                 }
-                is NetworkResult.Error -> {
-                    hideShimmerEffect()
-                    noConnectivityErrorView(response.message.toString())
-                }
-                is NetworkResult.Loading ->{
-                    showShimmerEffect()
-                }
-            }
-        })
+            })
+        }
     }
 
     private fun setupRecyclerView() {
-        binding.recyclerview.adapter = mAdapter
-        binding.recyclerview.layoutManager = LinearLayoutManager(requireContext())
-        showShimmerEffect()
+        binding.apply {
+            recyclerview.adapter = mAdapter
+            recyclerview.layoutManager = LinearLayoutManager(requireContext())
+        }
+        displayShimmerView(displayShimmerView = true)
     }
 
-    private fun showShimmerEffect() {
-        binding.recyclerview.showShimmer()
+    private fun displayShimmerView(displayShimmerView :Boolean) = binding.apply {
+        if(displayShimmerView){
+            recyclerview.showShimmer()
+        }else{
+            recyclerview.hideShimmer()
+        }
     }
 
-    private fun hideShimmerEffect() {
-        binding.recyclerview.hideShimmer()
+    private fun noConnectivityErrorView(message: String) = binding.apply {
+        errorTextView.text = message
+        errorTextView.visibility = View.VISIBLE
+        errorImageView.visibility = View.VISIBLE
+        floatingActionButton.visibility = View.GONE
+        recyclerview.visibility = View.GONE
     }
 
-    private fun noConnectivityErrorView(message: String) {
-        binding.errorTextView.text = message
-        binding.errorTextView.visibility = View.VISIBLE
-        binding.errorImageView.visibility = View.VISIBLE
-        binding.floatingActionButton.visibility = View.GONE
-        binding.recyclerview.visibility = View.GONE
-    }
-
-    private fun displayView() {
-        binding.errorTextView.visibility = View.GONE
-        binding.errorImageView.visibility = View.GONE
-        binding.floatingActionButton.visibility = View.VISIBLE
-        binding.recyclerview.visibility = View.VISIBLE
+    private fun displayView() = binding.apply {
+        errorTextView.visibility = View.GONE
+        errorImageView.visibility = View.GONE
+        floatingActionButton.visibility = View.VISIBLE
+        recyclerview.visibility = View.VISIBLE
     }
 
 
