@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.demo.code.R
 import com.demo.code.adapters.RecipesAdapter
 import com.demo.code.databinding.FragmentRecipesBinding
 import com.demo.code.ui.activities.MainViewModel
@@ -47,6 +49,15 @@ class RecipesFragment  : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
         readDatabase()
+        setClickListener()
+    }
+
+    private fun setClickListener() {
+        binding.apply {
+            floatingActionButton.setOnClickListener {
+                findNavController().navigate(R.id.recipesBottomSheet)
+            }
+        }
     }
 
     private fun readDatabase() {
