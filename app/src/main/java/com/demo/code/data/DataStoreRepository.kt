@@ -11,14 +11,16 @@ import com.demo.code.util.Constants.Companion.PREFERENCES_MEAL_TYPE
 import com.demo.code.util.Constants.Companion.PREFERENCES_MEAL_TYPE_ID
 import com.demo.code.util.Constants.Companion.PREFERENCES_NAME
 import dagger.hilt.android.qualifiers.ApplicationContext
+import dagger.hilt.android.scopes.ActivityRetainedScoped
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
 import java.io.IOException
 import javax.inject.Inject
 
+@ActivityRetainedScoped
 class DataStoreRepository @Inject constructor(@ApplicationContext private val context: Context) {
-    
+
     private object PreferenceKeys {
         val selectedMealType = preferencesKey<String>(PREFERENCES_MEAL_TYPE)
         val selectedMealTypeId = preferencesKey<Int>(PREFERENCES_MEAL_TYPE_ID)

@@ -47,7 +47,7 @@ class RecipesAdapter () : RecyclerView.Adapter<RecipesAdapter.ViewHolder>() {
         return recipieList.size
     }
 
-    fun applyVeganColor(view: View, vegan: Boolean) {
+    private fun applyVeganColor(view: View, vegan: Boolean) {
         if(vegan){
             when(view){
                 is TextView -> {
