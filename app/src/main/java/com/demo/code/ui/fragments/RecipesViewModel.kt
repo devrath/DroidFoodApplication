@@ -1,4 +1,4 @@
-package com.demo.code.ui.fragments.recipes.screen
+package com.demo.code.ui.fragments
 
 import android.app.Application
 import androidx.hilt.lifecycle.ViewModelInject
