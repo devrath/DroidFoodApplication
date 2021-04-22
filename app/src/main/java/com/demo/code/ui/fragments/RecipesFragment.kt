@@ -49,15 +49,6 @@ class RecipesFragment  : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
         readDatabase()
-        setClickListener()
-    }
-
-    private fun setClickListener() {
-        binding.apply {
-            floatingActionButton.setOnClickListener {
-                findNavController().navigate(R.id.recipesBottomSheet)
-            }
-        }
     }
 
     private fun readDatabase() {
@@ -118,14 +109,12 @@ class RecipesFragment  : Fragment() {
         errorTextView.text = message
         errorTextView.visibility = View.VISIBLE
         errorImageView.visibility = View.VISIBLE
-        floatingActionButton.visibility = View.GONE
         recyclerview.visibility = View.GONE
     }
 
     private fun displayView() = binding.apply {
         errorTextView.visibility = View.GONE
         errorImageView.visibility = View.GONE
-        floatingActionButton.visibility = View.VISIBLE
         recyclerview.visibility = View.VISIBLE
     }
 
