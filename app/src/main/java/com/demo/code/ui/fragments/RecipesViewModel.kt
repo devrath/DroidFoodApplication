@@ -32,14 +32,6 @@ class RecipesViewModel @ViewModelInject constructor(
 
     val readMealAndDietType = dataStoreRepository.readMealAndDietType
 
-    fun saveMealAndDietType(mealType: String, mealTypeId: Int, dietType: String, dietTypeId: Int) {
-
-        viewModelScope.launch(Dispatchers.IO) {
-            dataStoreRepository.saveMealAndDietType(mealType, mealTypeId, dietType, dietTypeId)
-        }
-
-    }
-
 
     fun applyQueries(): HashMap<String, String> {
         val queries: HashMap<String, String> = HashMap()

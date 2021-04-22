@@ -98,11 +98,7 @@ class RecipesFragment  : Fragment() {
     }
 
     private fun displayShimmerView(displayShimmerView :Boolean) = binding.apply {
-        if(displayShimmerView){
-            recyclerview.showShimmer()
-        }else{
-            recyclerview.hideShimmer()
-        }
+        if (displayShimmerView) recyclerview.showShimmer() else recyclerview.hideShimmer()
     }
 
     private fun noConnectivityErrorView(message: String) = binding.apply {

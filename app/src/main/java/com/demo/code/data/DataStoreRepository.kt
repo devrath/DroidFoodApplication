@@ -32,20 +32,6 @@ class DataStoreRepository @Inject constructor(@ApplicationContext private val co
         name = PREFERENCES_NAME
     )
 
-    suspend fun saveMealAndDietType(
-        mealType: String,
-        mealTypeId: Int,
-        dietType: String,
-        dietTypeId: Int
-    ) {
-        dataStore.edit { preferences ->
-            preferences[PreferenceKeys.selectedMealType] = mealType
-            preferences[PreferenceKeys.selectedMealTypeId] = mealTypeId
-            preferences[PreferenceKeys.selectedDietType] = dietType
-            preferences[PreferenceKeys.selectedDietTypeId] = dietTypeId
-        }
-    }
-
     /**
      * Return a flow from a database
      * If there is a I/O exception return empty shared preferences
