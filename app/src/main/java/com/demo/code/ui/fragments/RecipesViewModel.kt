@@ -1,7 +1,6 @@
 package com.demo.code.ui.fragments
 
 import android.app.Application
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.demo.code.data.DataStoreRepository
@@ -16,7 +15,6 @@ import com.demo.code.util.Constants.Companion.QUERY_FILL_INGREDIENTS
 import com.demo.code.util.Constants.Companion.QUERY_NUMBER
 import com.demo.code.util.Constants.Companion.QUERY_TYPE
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import javax.inject.Inject
