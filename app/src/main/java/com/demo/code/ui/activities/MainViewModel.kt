@@ -6,12 +6,15 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import androidx.lifecycle.*
+import com.demo.code.data.DataStoreRepository
 import com.demo.code.data.Repository
 import com.demo.code.data.database.RecipesEntity
 import com.demo.code.models.FoodRecipe
+import com.demo.code.util.Constants
 import com.demo.code.util.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import retrofit2.Response
 import javax.inject.Inject
@@ -19,8 +22,15 @@ import javax.inject.Inject
 @HiltViewModel
 class MainViewModel @Inject constructor(
     private val repository: Repository,
-    application: Application
+    application: Application,
+    dataStoreRepository: DataStoreRepository
 ) : AndroidViewModel(application) {
+
+
+    private var mealType = Constants.DEFAULT_MEAL_TYPE
+    private var dietType = Constants.DEFAULT_DIET_TYPE
+
+    private val readMealAndDietType = dataStoreRepository.readMealAndDietType
 
     /** ROOM DATABASE */
     val readRecipes: LiveData<List<RecipesEntity>> = repository.local.readDatabase().asLiveData()
@@ -96,6 +106,27 @@ class MainViewModel @Inject constructor(
             capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> true
             else -> false
         }
+    }
+
+
+    fun applyQueries(): HashMap<String, String> {
+        val queries: HashMap<String, String> = HashMap()
+
+        viewModelScope.launch {
+            readMealAndDietType.collect { value ->
+                mealType = value.selectedMealType
+                dietType = value.selectedDietType
+            }
+        }
+
+        queries[Constants.QUERY_NUMBER] = Constants.DEFAULT_RECIPES_NUMBER
+        queries[Constants.QUERY_API_KEY] = Constants.API_KEY
+        queries[Constants.QUERY_TYPE] = mealType
+        queries[Constants.QUERY_DIET] = dietType
+        queries[Constants.QUERY_ADD_RECIPE_INFORMATION] = "true"
+        queries[Constants.QUERY_FILL_INGREDIENTS] = "true"
+
+        return queries
     }
 
 }

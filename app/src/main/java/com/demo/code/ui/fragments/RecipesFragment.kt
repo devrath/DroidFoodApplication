@@ -27,14 +27,12 @@ class RecipesFragment  : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var mainViewModel: MainViewModel
-    private lateinit var recipesViewModel: RecipesViewModel
     private val mAdapter by lazy { RecipesAdapter() }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
-        recipesViewModel = ViewModelProvider(requireActivity()).get(RecipesViewModel::class.java)
     }
 
     override fun onCreateView(
@@ -67,7 +65,7 @@ class RecipesFragment  : Fragment() {
 
     private fun requestApiData() {
         mainViewModel.apply {
-            getRecipes(recipesViewModel.applyQueries())
+            getRecipes(mainViewModel.applyQueries())
             recipesResponse.observe(viewLifecycleOwner, { response ->
                 when(response){
                     is NetworkResult.Success -> {
