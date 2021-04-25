@@ -1,4 +1,4 @@
-package com.demo.code.ui.activities
+package com.demo.code.ui.vm
 
 import android.annotation.SuppressLint
 import android.app.Application

@@ -1,4 +1,4 @@
-package com.demo.code.ui.fragments
+package com.demo.code.ui.view
 
 import android.os.Bundle
 import android.util.Log
@@ -8,12 +8,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.demo.code.R
 import com.demo.code.adapters.RecipesAdapter
 import com.demo.code.databinding.FragmentRecipesBinding
-import com.demo.code.ui.activities.MainViewModel
+import com.demo.code.ui.vm.MainViewModel
 import com.demo.code.util.NetworkResult
 import com.demo.code.util.observeOnce
 import dagger.hilt.android.AndroidEntryPoint
