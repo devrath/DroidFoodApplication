@@ -35,9 +35,7 @@ object Apps {
     const val testRunner = "androidx.test.runner.AndroidJUnitRunner"
 }
 
-
 object Versions {
-
     const val toolsBuildGradle = "4.1.3"
     const val kotlin = "1.4.31"
     const val navigation = "2.3.1"
@@ -68,7 +66,6 @@ object Versions {
     const val stdlib_version = "1.4.32"
 }
 
-
 object Libs {
     const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib:${stdlib_version}"
     const val core_ktx = "androidx.core:core-ktx:${core_ktx_version}"
@@ -96,37 +93,29 @@ object Libs {
     const val facebook_shimmer = "com.facebook.shimmer:shimmer:${facebook_shimmer_version}"
     const val shimmer_recyclerview = "com.todkars:shimmer-recyclerview:${shimmer_recyclerview_version}"
     const val jsoup = "org.jsoup:jsoup:${jsoup_version}"
-
 }
 
-
-// kaptAndroidTest
 object KaptAndroidTest {
     const val hilt_kapt_Android_Test =  "com.google.dagger:hilt-compiler:${dagger_hilt_version}"
 }
 
-// kaptTest
 object KaptTest {
     const val hilt_kapt_test = "com.google.dagger:hilt-compiler:${dagger_hilt_version}"
 }
 
-// kpt
 object Kpt {
     const val room_kpt =  "androidx.room:room-compiler:${room_version}"
     const val dagger_compiler_kpt =  "com.google.dagger:hilt-compiler:${dagger_hilt_version}"
 }
 
-// testImplementation
 object TestImplementation {
     const val junit = "junit:junit:${junit_version}"
     const val hiltTesting = "com.google.dagger:hilt-android-testing:${dagger_hilt_version}"
 }
 
-// androidTestImplementation
 object AndroidTestImplementation {
     const val hilt_android_test =   "com.google.dagger:hilt-android-testing:${dagger_hilt_version}"
     const val hilt_room_android_test =  "androidx.room:room-testing:${room_version}"
     const val junit_android_x_android_test =  "androidx.test.ext:junit:${android_x_junit_version}"
     const val espresso_android_test =  "androidx.test.espresso:espresso-core:${espresso_core_version}"
 }
-
