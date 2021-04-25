@@ -9,7 +9,7 @@ In this project we will call a api and get the data and display it, along with i
 | [Coil](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#coil)|
 | Hilt |
 | [Kotlin-Dsl](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#kotlin-dsl) |
-| Room |
+| [Room](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#room) |
 | [DataStore Preferences](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#datastore-preferences) |
 
 
@@ -69,3 +69,11 @@ In this project we will call a api and get the data and display it, along with i
 * It is a part of android jetpack library.
 
 
+---
+### ``Hilt``
+
+* Reusability of code.
+* Ease of refactoring.
+* Ease of testing.
+* One of the important difference that makes hilt to dagger is its easier to use than dageer even though it uses all the features of dagger under the hood.
+* Component part is not there to set-up compared to dagger which makes hilt uasier to understand.
