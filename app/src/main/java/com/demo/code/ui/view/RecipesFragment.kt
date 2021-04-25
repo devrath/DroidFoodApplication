@@ -20,13 +20,15 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class RecipesFragment  : Fragment() {
 
-
+    // View Binding
     private var _binding: FragmentRecipesBinding? = null
     private val binding get() = _binding!!
 
+    // View Model
     private lateinit var mainViewModel: MainViewModel
-    private val mAdapter by lazy { RecipesAdapter() }
 
+    // List view adapter
+    private val mAdapter by lazy { RecipesAdapter() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
