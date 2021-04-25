@@ -34,6 +34,15 @@ object Apps {
 
 
 object Versions {
+
+    const val toolsBuildGradle = "4.1.3"
+    const val kotlin = "1.4.31"
+    const val navigation = "2.3.1"
+    const val gradlePlugin = "2.35"
+
+
+
+
     const val jsoup_version = "1.13.1"
     const val shimmer_recyclerview_version = "0.4.0"
     const val facebook_shimmer_version = "0.5.0"
@@ -87,7 +96,7 @@ object Libs {
     const val facebook_shimmer = "com.facebook.shimmer:shimmer:${facebook_shimmer_version}"
     const val shimmer_recyclerview = "com.todkars:shimmer-recyclerview:${shimmer_recyclerview_version}"
     const val jsoup = "org.jsoup:jsoup:${jsoup_version}"
-    
+
 }
 
 
