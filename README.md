@@ -59,3 +59,13 @@ In this project we will call a api and get the data and display it, along with i
 * It is easy to migrate from shared preferences 
 * Unlike the shared preferences which is not safe from runtime exceptions, the data store is safe from runtime exceptions.
 
+---
+### ``Room``
+
+* Compile-time verification of queries.
+* Reduces boilerplate code.
+* Easy to understand and use.
+* Easy integration with RxJava, LiveData and Kotlin Coroutines.
+* It is a part of android jetpack library.
+
+
