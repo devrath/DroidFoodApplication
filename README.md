@@ -7,7 +7,7 @@ In this project we will call a api and get the data and display it, along with i
 | --- |
 | [Retrofit](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#retrofit)|
 | [Coil](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#coil)|
-| Hilt |
+| [Hilt](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#hilt) |
 | [Kotlin-Dsl](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#kotlin-dsl) |
 | [Room](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#room) |
 | [DataStore Preferences](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#datastore-preferences) |
