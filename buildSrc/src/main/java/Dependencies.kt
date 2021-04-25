@@ -1,5 +1,6 @@
 package com.demo.code.dependencies
 
+import com.demo.code.dependencies.Versions.android_x_junit_version
 import com.demo.code.dependencies.Versions.app_compact_version
 import com.demo.code.dependencies.Versions.coil_version
 import com.demo.code.dependencies.Versions.constraint_layout_version
@@ -7,9 +8,11 @@ import com.demo.code.dependencies.Versions.core_ktx_version
 import com.demo.code.dependencies.Versions.coroutines_version
 import com.demo.code.dependencies.Versions.dagger_hilt_version
 import com.demo.code.dependencies.Versions.data_stores_version
+import com.demo.code.dependencies.Versions.espresso_core_version
 import com.demo.code.dependencies.Versions.facebook_shimmer_version
 import com.demo.code.dependencies.Versions.gson_version
 import com.demo.code.dependencies.Versions.jsoup_version
+import com.demo.code.dependencies.Versions.junit_version
 import com.demo.code.dependencies.Versions.legacy_support_version
 import com.demo.code.dependencies.Versions.lifecycle_extension_version
 import com.demo.code.dependencies.Versions.lifecycle_runtime_viewmodel_livedata_version
@@ -84,20 +87,37 @@ object Libs {
     const val facebook_shimmer = "com.facebook.shimmer:shimmer:${facebook_shimmer_version}"
     const val shimmer_recyclerview = "com.todkars:shimmer-recyclerview:${shimmer_recyclerview_version}"
     const val jsoup = "org.jsoup:jsoup:${jsoup_version}"
+    
+}
 
-   /* androidTestImplementation  "com.google.dagger:hilt-android-testing:${dagger_hilt_version}"
-    androidTestImplementation "androidx.room:room-testing:${room_version}"
-    androidTestImplementation "androidx.test.ext:junit:${android_x_junit_version}"
-    androidTestImplementation "androidx.test.espresso:espresso-core:${espresso_core_version}"
 
-    kapt "androidx.room:room-compiler:${room_version}"
-    kapt "com.google.dagger:hilt-compiler:${dagger_hilt_version}"
+// kaptAndroidTest
+object KaptAndroidTest {
+    const val hilt_kapt_Android_Test =  "com.google.dagger:hilt-compiler:${dagger_hilt_version}"
+}
 
-    kaptTest "com.google.dagger:hilt-compiler:${dagger_hilt_version}"
+// kaptTest
+object KaptTest {
+    const val hilt_kapt_test = "com.google.dagger:hilt-compiler:${dagger_hilt_version}"
+}
 
-    kaptAndroidTest "com.google.dagger:hilt-compiler:${dagger_hilt_version}"
+// kpt
+object Kpt {
+    const val room_kpt =  "androidx.room:room-compiler:${room_version}"
+    const val dagger_compiler_kpt =  "com.google.dagger:hilt-compiler:${dagger_hilt_version}"
+}
 
-    testImplementation "junit:junit:${junit_version}"
-    testImplementation "com.google.dagger:hilt-android-testing:${dagger_hilt_version}"*/
+// testImplementation
+object TestImplementation {
+    const val junit = "junit:junit:${junit_version}"
+    const val hiltTesting = "com.google.dagger:hilt-android-testing:${dagger_hilt_version}"
+}
+
+// androidTestImplementation
+object AndroidTestImplementation {
+    const val hilt_android_test =   "com.google.dagger:hilt-android-testing:${dagger_hilt_version}"
+    const val hilt_room_android_test =  "androidx.room:room-testing:${room_version}"
+    const val junit_android_x_android_test =  "androidx.test.ext:junit:${android_x_junit_version}"
+    const val espresso_android_test =  "androidx.test.espresso:espresso-core:${espresso_core_version}"
 }
 
