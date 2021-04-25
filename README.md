@@ -52,5 +52,10 @@ In this project we will call a api and get the data and display it, along with i
 ---
 ### ``DataStore Preferences``
 
-
+* It is one of the data storage solution from android jetpack. 
+* It allows to store the data in the form of key and value pairs similar to shared preferences.
+* It is a replacement to shared preferences. 
+* Shared preferences are synchronous and are not main thread safe but the sata store is safe to use in main thread since it uses dispatchers.io under the hood.
+* It is easy to migrate from shared preferences 
+* Unlike the shared preferences which is not safe from runtime exceptions, the data store is safe from runtime exceptions.
 
