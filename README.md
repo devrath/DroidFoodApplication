@@ -49,7 +49,8 @@ In this project we will call a api and get the data and display it, along with i
 * We can use all the functionalities of kotlin in our gradle file.
 * Refactoring is much easier.
 
-
+---
+### ``DataStore Preferences``
 
 
 
