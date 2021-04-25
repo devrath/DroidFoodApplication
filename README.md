@@ -17,7 +17,7 @@ In this project we will call a api and get the data and display it, along with i
 <h2>Retrofit</h2>
 
 <p align="center">
-  <img width="400" height="200" src="https://github.com/devrath/DroidFoodApplication/blob/main/images/retrofit.png">
+  <img width="200" height="100" src="https://github.com/devrath/DroidFoodApplication/blob/main/images/retrofit.png">
 </p>
 
 
@@ -28,7 +28,7 @@ In this project we will call a api and get the data and display it, along with i
 <h2>Coil</h2>
 
 <p align="center">
-  <img width="400" height="200" src="https://github.com/devrath/DroidFoodApplication/blob/main/images/coil.png">
+  <img width="200" height="100" src="https://github.com/devrath/DroidFoodApplication/blob/main/images/coil.png">
 </p>
 
 
@@ -40,7 +40,7 @@ In this project we will call a api and get the data and display it, along with i
 <h2>Hilt</h2>
 
 <p align="center">
-  <img width="400" height="200" src="https://github.com/devrath/DroidFoodApplication/blob/main/images/hilt.jpeg">
+  <img width="200" height="100" src="https://github.com/devrath/DroidFoodApplication/blob/main/images/hilt.jpeg">
 </p>
 
 
@@ -51,7 +51,7 @@ In this project we will call a api and get the data and display it, along with i
 <h2>Kotlin-Dsl</h2>
 
 <p align="center">
-  <img width="400" height="200" src="https://github.com/devrath/DroidFoodApplication/blob/main/images/dsl.png">
+  <img width="150" height="150" src="https://github.com/devrath/DroidFoodApplication/blob/main/images/dsl.png">
 </p>
 
 
@@ -61,7 +61,7 @@ In this project we will call a api and get the data and display it, along with i
 <h2>Room</h2>
 
 <p align="center">
-  <img width="400" height="200" src="https://github.com/devrath/DroidFoodApplication/blob/main/images/room.png">
+  <img width="200" height="100" src="https://github.com/devrath/DroidFoodApplication/blob/main/images/room.png">
 </p>
 
 
@@ -72,5 +72,5 @@ In this project we will call a api and get the data and display it, along with i
 <h2>DataStore Preferences</h2>
 
 <p align="center">
-  <img width="400" height="200" src="https://github.com/devrath/DroidFoodApplication/blob/main/images/datastore.png">
+  <img width="200" height="0" src="https://github.com/devrath/DroidFoodApplication/blob/main/images/datastore.png">
 </p>
