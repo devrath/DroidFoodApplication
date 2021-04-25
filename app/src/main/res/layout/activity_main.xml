@@ -2,6 +2,6 @@
 <androidx.fragment.app.FragmentContainerView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/navHostFragment"
-    android:name="com.demo.code.ui.fragments.RecipesFragment"
+    android:name="com.demo.code.ui.view.RecipesFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"/>
