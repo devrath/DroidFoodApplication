@@ -10,7 +10,7 @@ In this project we will call a api and get the data and display it, along with i
 | Hilt |
 | [Kotlin-Dsl](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#kotlin-dsl) |
 | Room |
-| DataStore Preferences |
+| [DataStore Preferences](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#datastore-preferences) |
 
 
 ---
