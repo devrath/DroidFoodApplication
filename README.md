@@ -5,7 +5,7 @@ In this project we will call a api and get the data and display it, along with i
 
 | **Project is developed using the libraries** |
 | --- |
-| [Retrofit](https://github.com/devrath/DroidDi/blob/main/README.md#dagger "Dagger2")|
+| [Retrofit](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#retrofit)|
 | Coil |
 | Hilt |
 | Kotlin-Dsl |
@@ -13,7 +13,7 @@ In this project we will call a api and get the data and display it, along with i
 | DataStore Preferences |
 
 
-
+---
 ### Retrofit 
 
 * Developer friendly library
