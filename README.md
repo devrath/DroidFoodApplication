@@ -7,9 +7,70 @@ In this project we will call a api and get the data and display it, along with i
 | --- |
 | Retrofit |
 | Coil |
-| Multidex |
-| Android ViewModel |
 | Hilt |
 | Kotlin-Dsl |
 | Room |
 | DataStore Preferences |
+
+
+---
+<h2>Retrofit</h2>
+
+<p align="center">
+  <img width="400" height="200" src="https://github.com/devrath/DroidFoodApplication/blob/main/images/retrofit.png">
+</p>
+
+
+
+
+
+---
+<h2>Coil</h2>
+
+<p align="center">
+  <img width="400" height="200" src="https://github.com/devrath/DroidFoodApplication/blob/main/images/coil.png">
+</p>
+
+
+
+
+
+
+---
+<h2>Hilt</h2>
+
+<p align="center">
+  <img width="400" height="200" src="https://github.com/devrath/DroidFoodApplication/blob/main/images/hilt.jpeg">
+</p>
+
+
+
+
+
+---
+<h2>Kotlin-Dsl</h2>
+
+<p align="center">
+  <img width="400" height="200" src="https://github.com/devrath/DroidFoodApplication/blob/main/images/dsl.png">
+</p>
+
+
+
+
+---
+<h2>Room</h2>
+
+<p align="center">
+  <img width="400" height="200" src="https://github.com/devrath/DroidFoodApplication/blob/main/images/room.png">
+</p>
+
+
+
+
+
+---
+<h2>DataStore Preferences</h2>
+
+<p align="center">
+  <img width="400" height="200" src="https://github.com/devrath/DroidFoodApplication/blob/main/images/datastore.png">
+</p>
