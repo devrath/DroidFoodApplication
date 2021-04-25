@@ -5,12 +5,11 @@ In this project we will call a api and get the data and display it, along with i
 
 | Quick Reference |
 | --- |
-| Navigation Component |
 | Retrofit |
 | Coil |
 | Multidex |
 | Android ViewModel |
 | Hilt |
-| View Binding |
+| Kotlin-Dsl |
 | Room |
 | DataStore Preferences |
