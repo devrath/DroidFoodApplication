@@ -6,7 +6,7 @@ In this project we will call a api and get the data and display it, along with i
 | **Project is developed using the libraries** |
 | --- |
 | [Retrofit](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#retrofit)|
-| Coil |
+| [Coil](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#coil)|
 | Hilt |
 | Kotlin-Dsl |
 | Room |
@@ -32,15 +32,4 @@ In this project we will call a api and get the data and display it, along with i
 ---
 ### ``Coil``
 
-* Developer friendly library
-* Easy to Configure
-* Less boiler plate code
-* Supports internal parsing using GSON,Jakson,Moshi, can be configured
-* Supports caching
-* Annotation based setting requests
-* Supports error handeling
-* Easy to define retry and timeouts using the interceptor
-* Endpoint can be added in one place
-* Support to FLOW api of coroutines
-* Support to suspend function of coroutines
-* Very well documented and tested
+* Coil is a image loading library
