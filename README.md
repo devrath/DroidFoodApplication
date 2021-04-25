@@ -38,7 +38,6 @@ In this project we will call a api and get the data and display it, along with i
 * Library very lightweight and easy to use because it adds around two thousand methods, to your APK which are very less in number in comparison with Picasso, Glide, and universal image loader.
 * Library uses modern libraries of Android such as Okio, OkHttp, and AndroidX lifecycles.
 * Library aoids annotation processing which can often slow down build speeds. Coil depends on Kotlin's extension functions instead.
-* 
 
 ---
 ### ``Kotlin-Dsl``
