@@ -27,9 +27,12 @@ import com.demo.code.dependencies.Versions.stdlib_version
 object Apps {
     const val compileSdk = 30
     const val minSdk = 16
-    const val targetSdk = 29
+    const val targetSdk = 30
     const val versionCode = 1
     const val versionName = "1.0"
+    const val buildToolsVersion = "30.0.3"
+    const val applicationId = "com.demo.code"
+    const val testRunner = "androidx.test.runner.AndroidJUnitRunner"
 }
 
 
@@ -39,9 +42,6 @@ object Versions {
     const val kotlin = "1.4.31"
     const val navigation = "2.3.1"
     const val gradlePlugin = "2.35"
-
-
-
 
     const val jsoup_version = "1.13.1"
     const val shimmer_recyclerview_version = "0.4.0"
@@ -73,7 +73,7 @@ object Libs {
     const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib:${stdlib_version}"
     const val core_ktx = "androidx.core:core-ktx:${core_ktx_version}"
     const val app_compact = "androidx.appcompat:appcompat:${app_compact_version}"
-    const val espresso_core = "androidx.constraintlayout:constraintlayout:${constraint_layout_version}"
+    const val constraint_layout = "androidx.constraintlayout:constraintlayout:${constraint_layout_version}"
     const val legacy_support = "androidx.legacy:legacy-support-v4:${legacy_support_version}"
     const val navigation_fragment = "androidx.navigation:navigation-fragment-ktx:${navigation_version}"
     const val navigation_ui = "androidx.navigation:navigation-ui-ktx:${navigation_version}"
