@@ -8,7 +8,7 @@ In this project we will call a api and get the data and display it, along with i
 | [Retrofit](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#retrofit)|
 | [Coil](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#coil)|
 | Hilt |
-| Kotlin-Dsl |
+| [Kotlin-Dsl](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#coil) |
 | Room |
 | DataStore Preferences |
 
@@ -33,3 +33,12 @@ In this project we will call a api and get the data and display it, along with i
 ### ``Coil``
 
 * Coil is a image loading library
+
+---
+### ``Kotlin-Dsl``
+
+
+
+
+
+
