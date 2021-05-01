@@ -27,7 +27,12 @@ In this project we will call a api and get the data and display it, along with i
 
 ### ``What is clean architecture``
 
-
+* It is a way to organize the the project to achieve `maintainability` and `scalability`.
+* Mantra is to have one concern per component - > Meaning each piece of our architecture does only one thing and nothhing else.
+* If one componet has 2 concerns or more, Then we need to split them up so that we have one concern each.
+* It is structured in layers of dependency. One layer depend on another layer and kind of have a relationship.
+* Implementation layers depends on abstract layers meaning how we implement something depend depend on what we implement
+* It is not specific to mobile development, It not a mobile architecture, It's a software development architecture 
 
 ---
 
