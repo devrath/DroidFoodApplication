@@ -5,13 +5,13 @@ In this project we will call a api and get the data and display it, along with i
 
 ---
 
-| **Clean Architecture** | **Project is developed using the libraries** |
-| --- | --- |
-| [Layered diagram](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#clean-architecture-layered-diagram) | [Retrofit](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#retrofit)|
-| [What is it](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#what-is-clean-architecture) | [Coil](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#coil)|
-| [Advantages](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#advantages-of-clean-architecture) | [Hilt](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#hilt) |
-| [Components](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#components-of-clean-architecture) | [Kotlin-Dsl](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#kotlin-dsl) |
-|  | [Room](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#room) |
+| **Clean Architecture** | **Project is developed using the libraries** | **SOLID principles** |
+| --- | --- | --- |
+| [Layered diagram](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#clean-architecture-layered-diagram) | [Retrofit](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#retrofit)| **S**ingle responsibility principle |
+| [What is it](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#what-is-clean-architecture) | [Coil](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#coil)| **O**pen closed principle |
+| [Advantages](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#advantages-of-clean-architecture) | [Hilt](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#hilt) | **L**iskov substitution principle |
+| [Components](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#components-of-clean-architecture) | [Kotlin-Dsl](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#kotlin-dsl) | **I**nterface segration principle |
+|  | [Room](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#room) | **D**ependency inversion principle |
 |  | [DataStore Preferences](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#datastore-preferences) |
 
 ---
