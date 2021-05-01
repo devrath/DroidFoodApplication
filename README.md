@@ -7,10 +7,16 @@ In this project we will call a api and get the data and display it, along with i
 
 | Clean Architecture |
 | --- |
+| [Clean architecture layered diagram]() |
 | [What is clean architecture](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#what-is-clean-architecture) |
 | description |
 | description |
-| description |
+
+---
+
+### ``Clean architecture layered diagram``
+![Banner](images/cleanarchitecture.png)
+
 
 ---
 
