@@ -5,7 +5,7 @@ In this project we will call a api and get the data and display it, along with i
 
 ---
 
-| [**Wiki**](https://github.com/devrath/DroidFoodApplication/wiki) |
+| [**Documentation links of Wiki is present below**](https://github.com/devrath/DroidFoodApplication/wiki) |
 | --- |
 | [```Clean Architecture```](https://github.com/devrath/DroidFoodApplication/wiki/Clean-Architecture) |
 | [```SOLID principles```](https://github.com/devrath/DroidFoodApplication/wiki/SOLID-principles) |
