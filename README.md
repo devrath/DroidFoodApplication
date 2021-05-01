@@ -5,29 +5,20 @@ In this project we will call a api and get the data and display it, along with i
 
 ---
 
-| Clean Architecture |
-| --- |
-| [Clean architecture layered diagram](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#clean-architecture-layered-diagram) |
-| [What is clean architecture](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#what-is-clean-architecture) |
-| description |
-| description |
+| **Clean Architecture** | **Project is developed using the libraries** |
+| --- | --- |
+| [Clean architecture layered diagram](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#clean-architecture-layered-diagram) | [Retrofit](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#retrofit)|
+| [What is clean architecture](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#what-is-clean-architecture) | [Coil](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#coil)|
+|  | [Hilt](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#hilt) |
+|  | [Kotlin-Dsl](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#kotlin-dsl) |
+|  | [Room](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#room) |
+|  | [DataStore Preferences](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#datastore-preferences) |
 
 ---
 
 ### ``Clean architecture layered diagram``
 ![Banner](images/cleanarchitecture.png)
 
-
----
-
-| **Project is developed using the libraries** |
-| --- |
-| [Retrofit](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#retrofit)|
-| [Coil](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#coil)|
-| [Hilt](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#hilt) |
-| [Kotlin-Dsl](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#kotlin-dsl) |
-| [Room](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#room) |
-| [DataStore Preferences](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#datastore-preferences) |
 
 ---
 
