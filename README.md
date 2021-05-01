@@ -34,6 +34,9 @@ In this project we will call a api and get the data and display it, along with i
 * Implementation layers depends on abstract layers meaning how we implement something depend depend on what we implement
 * It is not specific to mobile development, It not a mobile architecture, It's a software development architecture 
 
+### ``Advantages of clean architecture``
+
+
 ---
 
 ### ``Retrofit``
