@@ -3,6 +3,17 @@
 # DroidFoodApplication
 In this project we will call a api and get the data and display it, along with it we are caching it locally so that when your application is in offline, still we are able to display the data
 
+---
+
+| Clean Architecture |
+| --- |
+| [What is clean architecture]() |
+| description |
+| description |
+| description |
+
+---
+
 | **Project is developed using the libraries** |
 | --- |
 | [Retrofit](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#retrofit)|
@@ -12,8 +23,14 @@ In this project we will call a api and get the data and display it, along with i
 | [Room](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#room) |
 | [DataStore Preferences](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#datastore-preferences) |
 
+---
+
+### ``What is clean architecture``
+
+
 
 ---
+
 ### ``Retrofit``
 
 * Developer friendly library
