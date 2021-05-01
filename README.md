@@ -7,7 +7,7 @@ In this project we will call a api and get the data and display it, along with i
 
 | Clean Architecture |
 | --- |
-| [What is clean architecture]() |
+| [What is clean architecture](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#what-is-clean-architecture) |
 | description |
 | description |
 | description |
