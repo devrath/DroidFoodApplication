@@ -48,7 +48,12 @@ In this project we will call a api and get the data and display it, along with i
 
 ### ``Components of clean architecture``
 
-
+| **Entities** | **Usecases** | **Controllers,Presenters** |  **Infrastructure** |
+| --- | --- | --- | --- |
+| It is the innermost layer | They are are the set of actions that need to be taken on the entities, Things like what we can do with the data | It simply takes the data from the use cases and sends into wherever needed, simply presented to the upper layer | This layer determines how the data is interpretted and presented |
+| This usually relate to `POJO's`  | They contain no dependencies related to android system | Here we depend on lot of interfaces, these interfaces, These interfaces define waht each `controller/presenter` does | This is the most volatile layer, This is the reason we seperate the layers so that changes compe up, the other layers are not affected |
+| They store data and do nothing much | They don't know how the result is going to be used | From the use case layer this layer presents the data to upper layer in forms like `xml/json` so the outer layer can use them | This layer via the interface interact with lower layer to get the data and display it |
+|  | Use case is like a `black box`, you put the data in and later take the data out, it dosen't know how data is used  | Here we have framework related components of android | This layer is highly dependent on the framework like `activity/fragment` |
 
 ---
 
