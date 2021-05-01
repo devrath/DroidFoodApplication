@@ -36,6 +36,13 @@ In this project we will call a api and get the data and display it, along with i
 
 ### ``Advantages of clean architecture``
 
+* `Strict architecture`, So it's not easy to make mistakes.
+* `Business logic is encapsulated`, So it's to use and test.
+* `Enforcement` of depencencies through encapsulation.
+* `Parallel` development.
+* `Highly scalable`, we can grow a small project with clean architecture to a large project without bumping into problems.
+* `Easy` to understand and maintain. 
+* `Testing` is facilitated.
 
 ---
 
