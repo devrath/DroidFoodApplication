@@ -8,9 +8,9 @@ In this project we will call a api and get the data and display it, along with i
 | **Clean Architecture** | **Project is developed using the libraries** |
 | --- | --- |
 | [Clean architecture layered diagram](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#clean-architecture-layered-diagram) | [Retrofit](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#retrofit)|
-| [What is clean architecture](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#what-is-clean-architecture) | [Coil](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#coil)|
-| [Advantages of clean architecture](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#advantages-of-clean-architecture) | [Hilt](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#hilt) |
-|  | [Kotlin-Dsl](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#kotlin-dsl) |
+| [What is it](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#what-is-clean-architecture) | [Coil](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#coil)|
+| [Advantages](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#advantages-of-clean-architecture) | [Hilt](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#hilt) |
+| [Components](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#advantages-of-clean-architecture) | [Kotlin-Dsl](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#kotlin-dsl) |
 |  | [Room](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#room) |
 |  | [DataStore Preferences](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#datastore-preferences) |
 
@@ -43,6 +43,12 @@ In this project we will call a api and get the data and display it, along with i
 * `Highly scalable`, we can grow a small project with clean architecture to a large project without bumping into problems.
 * `Easy` to understand and maintain. 
 * `Testing` is facilitated.
+
+---
+
+### ``Components of clean architecture``
+
+
 
 ---
 
