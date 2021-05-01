@@ -9,7 +9,7 @@ In this project we will call a api and get the data and display it, along with i
 | --- | --- |
 | [Clean architecture layered diagram](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#clean-architecture-layered-diagram) | [Retrofit](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#retrofit)|
 | [What is clean architecture](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#what-is-clean-architecture) | [Coil](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#coil)|
-|  | [Hilt](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#hilt) |
+| [Advantages of clean architecture](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#what-is-clean-architecture) | [Coil](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#coil) | [Hilt](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#hilt) |
 |  | [Kotlin-Dsl](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#kotlin-dsl) |
 |  | [Room](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#room) |
 |  | [DataStore Preferences](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#datastore-preferences) |
@@ -19,6 +19,9 @@ In this project we will call a api and get the data and display it, along with i
 ### ``Clean architecture layered diagram``
 ![Banner](images/cleanarchitecture.png)
 
+* From the diagram, we can see that lower-level `Entities` basically define `Enterprice business rules`.
+* Next to it is use cases, We can see that arrows from `use case layer` that encopass `Application business rules` point to `Entities`. The `Entities` cannot use anything from `use case layer`.
+* `Entities` apply to the whole business in general. `Use cases` are how you use those `entities(Business rules)`. Then the green color layer contains things like `controllers`,`presenters`,`etc`, This layer prepares the data and pass it into upper layer which is `presenter`. The presenter is the blue layer which is dealing with how the data is presented to the user.
 
 ---
 
@@ -53,7 +56,7 @@ In this project we will call a api and get the data and display it, along with i
 
 * Coil is a image loading library.
 * Coil is built to work efficiently with kotlin.
-* COIL loads images very faster with the number of optimizations which includes memory, disk caching, reusing of bitmaps, and down spacing the image in memory which makes it faster in comparison with other image loading libraries.
+* Coil loads images very faster with the number of optimizations which includes memory, disk caching, reusing of bitmaps, and down spacing the image in memory which makes it faster in comparison with other image loading libraries.
 * Library very lightweight and easy to use because it adds around two thousand methods, to your APK which are very less in number in comparison with Picasso, Glide, and universal image loader.
 * Library uses modern libraries of Android such as Okio, OkHttp, and AndroidX lifecycles.
 * Library aoids annotation processing which can often slow down build speeds. Coil depends on Kotlin's extension functions instead.
