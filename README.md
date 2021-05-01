@@ -9,7 +9,7 @@ In this project we will call a api and get the data and display it, along with i
 | --- | --- |
 | [Clean architecture layered diagram](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#clean-architecture-layered-diagram) | [Retrofit](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#retrofit)|
 | [What is clean architecture](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#what-is-clean-architecture) | [Coil](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#coil)|
-| [Advantages of clean architecture](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#what-is-clean-architecture) | [Coil](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#coil) | [Hilt](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#hilt) |
+| [Advantages of clean architecture](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#advantages-of-clean-architecture) | [Hilt](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#hilt) |
 |  | [Kotlin-Dsl](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#kotlin-dsl) |
 |  | [Room](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#room) |
 |  | [DataStore Preferences](https://github.com/devrath/DroidFoodApplication/blob/main/README.md#datastore-preferences) |
