@@ -10,7 +10,7 @@
 <a><img src="https://img.shields.io/badge/Hilt-Dependency%20Injection-green"></a>
 </p>
 
-<p align="center"><a><img align="left" src="https://github.com/devrath/devrath/blob/master/images/description.png" width="80" height="80" alt="Description" title="Description"></a></p> 
+<p align="center"><a><img align="left" src="https://github.com/devrath/devrath/blob/master/images/description.png" width="60" height="60" alt="Description" title="Description"></a></p> 
 In this project we will call a api and get the data and display it, along with it we are caching it locally so that when your application is in offline, still we are able to display the data
 
 ---
