@@ -46,7 +46,6 @@ android {
 kapt { correctErrorTypes=true }
 
 dependencies {
-    implementation(project(":core"))
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
     implementation(Libs.stdlib)
