@@ -18,8 +18,6 @@ In this project we will call a api and get the data and display it, along with i
 
 | **Documentation links of Wiki is present below** |
 | --- |
-| [```Clean Architecture```](https://github.com/devrath/DroidFoodApplication/wiki/Clean-Architecture) |
-| [```SOLID principles```](https://github.com/devrath/DroidFoodApplication/wiki/SOLID-principles) |
 | [```Tools used in project```](https://github.com/devrath/DroidFoodApplication/wiki/Tools-used-in-project) |
 
 
