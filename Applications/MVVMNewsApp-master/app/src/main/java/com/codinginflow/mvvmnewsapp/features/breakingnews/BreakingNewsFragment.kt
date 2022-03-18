@@ -24,7 +24,6 @@ class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
 
     private val viewModel: BreakingNewsViewModel by viewModels()
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val binding = FragmentBreakingNewsBinding.bind(view)
