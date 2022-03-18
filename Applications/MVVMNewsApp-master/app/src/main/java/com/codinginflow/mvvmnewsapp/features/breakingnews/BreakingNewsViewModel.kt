@@ -5,8 +5,11 @@ import androidx.lifecycle.viewModelScope
 import com.codinginflow.mvvmnewsapp.data.NewsArticle
 import com.codinginflow.mvvmnewsapp.data.NewsRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -25,14 +28,16 @@ class BreakingNewsViewModel @Inject constructor(
     private val repository: NewsRepository
 ) : ViewModel() {
 
-    val breakingNewFlow = MutableStateFlow<List<NewsArticle>>(emptyList())
-    val breakingNews : Flow<List<NewsArticle>> = breakingNewFlow
+    /**
+     * Let's keep the cold flow in a mutable state flow so that when device is rotated the latest value is returned instead of executing whole flow block again
+     * ** We achieve this using --> stateIn
+     * ** We indicate that flow becomes active when it is invoked and not in other scenario --> SharingStarted.Lazily
+     * ** We pass as null because we want to distinguish from success, loading, error
+     * **************************************************************
+     * So a StateIn operator turns normal cold flow into hot state flow and retains the latest value
+     */
+    val breakingNews = repository.getBreakingNews()
+        .stateIn(viewModelScope, SharingStarted.Lazily,null)
 
-    init {
-        viewModelScope.launch {
-            val news = repository.getBreakingNews()
-            breakingNewFlow.value = news
-        }
-    }
 
 }
