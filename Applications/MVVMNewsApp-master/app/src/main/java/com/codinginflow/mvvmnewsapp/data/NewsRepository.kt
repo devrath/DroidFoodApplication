@@ -28,7 +28,8 @@ class NewsRepository @Inject constructor(
      * This is a cold flow: -> This will be executed only when it is called and not in other scenario
      */
     fun getBreakingNews(
-        onFetchFailed : (Throwable) -> Unit
+        onFetchFailed : (Throwable) -> Unit,
+        onFetchSuccess : () -> Unit
     ) : Flow<Resource<List<NewsArticle>>> =
         /**
          * NetworkBoundResource function that decides to return or fetch new data
@@ -85,7 +86,8 @@ class NewsRepository @Inject constructor(
                     throw t
                 }
                 onFetchFailed(t)
-            }
+            },
+            onFetchSuccess = onFetchSuccess
 
         )
 

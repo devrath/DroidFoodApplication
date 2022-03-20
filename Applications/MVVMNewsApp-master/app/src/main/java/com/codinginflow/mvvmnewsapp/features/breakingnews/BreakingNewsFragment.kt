@@ -16,8 +16,11 @@ import com.codinginflow.mvvmnewsapp.R
 import com.codinginflow.mvvmnewsapp.databinding.FragmentBreakingNewsBinding
 import com.codinginflow.mvvmnewsapp.shared.NewsArticleListAdapter
 import com.codinginflow.mvvmnewsapp.util.Resource
+import com.codinginflow.mvvmnewsapp.util.exhaustive
+import com.codinginflow.mvvmnewsapp.util.showSnackbar
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
 
 /**
@@ -58,7 +61,12 @@ class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
                     buttonRetry.isVisible = result.error != null && result.data.isNullOrEmpty()
                     textViewError.text = getString(R.string.could_not_refresh,result.error?.localizedMessage?:R.string.unknown_error_occurred)
 
-                    newsArticleAdapter.submitList(result.data)
+                    newsArticleAdapter.submitList(result.data) {
+                        if(viewModel.pendingScrollToTopAfterRefresh){
+                            recyclerView.scrollToPosition(0)
+                            viewModel.pendingScrollToTopAfterRefresh = false
+                        }
+                    }
                 }
             }
             swipeRefreshLayout.setOnRefreshListener {
@@ -66,6 +74,19 @@ class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
             }
             buttonRetry.setOnClickListener {
                 viewModel.onManualRefresh()
+            }
+            viewLifecycleOwner.lifecycleScope.launch {
+                viewModel.events.collect { event ->
+                    when(event){
+                        is BreakingNewsViewModel.Event.ShowErrorMessage ->
+                            showSnackbar(
+                            message = getString(
+                                R.string.could_not_refresh,
+                            event.error.localizedMessage
+                                ?: getString(R.string.unknown_error_occurred))
+                        )
+                    }.exhaustive
+                }
             }
         }
 

@@ -27,6 +27,15 @@ class BreakingNewsViewModel @Inject constructor(
 ) : ViewModel() {
 
     /**
+     * Fragment should not be able to add values into the channel instead it should only be able to take value from the channel
+     * Turning into the flow, the fragment can't put anything into it
+     */
+    private val _eventChannel = Channel<Event>()
+    val events = _eventChannel.receiveAsFlow()
+
+    var pendingScrollToTopAfterRefresh = false
+
+    /**
      * We use channel to communicate between the coroutines
      * * One coroutine can put something into the channel and other coroutine can take out something out of the channel.
      * * Sender can suspend if the receiver is not ready yet and is processing the old values
@@ -48,7 +57,16 @@ class BreakingNewsViewModel @Inject constructor(
      * flatMapLatest -> Latest means it always cancels old one and gives new one when called
      */
     val breakingNews = refreshTrigger.flatMapLatest {
-        repository.getBreakingNews()
+        repository.getBreakingNews(
+            onFetchSuccess = {
+                pendingScrollToTopAfterRefresh = true
+            },
+            onFetchFailed  = { t ->
+                viewModelScope.launch {
+                    _eventChannel.send(Event.ShowErrorMessage(t))
+                }
+            }
+        )
     }.stateIn(viewModelScope, SharingStarted.Lazily,null)
 
 
@@ -82,6 +100,10 @@ class BreakingNewsViewModel @Inject constructor(
                 refreshTriggerChannel.send(Unit)
             }
         }
+    }
+
+    sealed class Event {
+        data class ShowErrorMessage(val error: Throwable) : Event()
     }
 
 }

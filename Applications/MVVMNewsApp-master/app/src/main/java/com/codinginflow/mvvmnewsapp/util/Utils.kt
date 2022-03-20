@@ -36,5 +36,6 @@ inline fun SearchView.onQueryTextSubmit(crossinline listener: (String) -> Unit) 
     })
 }
 
+// Forcing compiler to treat as expression
 val <T> T.exhaustive: T
     get() = this
