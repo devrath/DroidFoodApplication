@@ -5,6 +5,8 @@ import com.codinginflow.mvvmnewsapp.api.NewsApi
 import com.codinginflow.mvvmnewsapp.util.Resource
 import com.codinginflow.mvvmnewsapp.util.networkBoundResource
 import kotlinx.coroutines.flow.Flow
+import retrofit2.HttpException
+import java.io.IOException
 import javax.inject.Inject
 
 /**
@@ -25,7 +27,9 @@ class NewsRepository @Inject constructor(
      * ******************************
      * This is a cold flow: -> This will be executed only when it is called and not in other scenario
      */
-    fun getBreakingNews() : Flow<Resource<List<NewsArticle>>> =
+    fun getBreakingNews(
+        onFetchFailed : (Throwable) -> Unit
+    ) : Flow<Resource<List<NewsArticle>>> =
         /**
          * NetworkBoundResource function that decides to return or fetch new data
          * Good thing about network bound resource is that it is reusable, in a different place its re-usable
@@ -73,7 +77,16 @@ class NewsRepository @Inject constructor(
                     newsArticleDao.insertArticles(breakingNewsArticles)
                     newsArticleDao.insertBreakingNews(breakingNews)
                 }
+            },
+            onFetchFailed = { t ->
+                // Transfer the control back to the view model
+                if (t !is HttpException && t !is IOException) {
+                    // This is because we are handling only http and io exception else we crash the app
+                    throw t
+                }
+                onFetchFailed(t)
             }
+
         )
 
 

@@ -3,6 +3,9 @@ package com.codinginflow.mvvmnewsapp.features.breakingnews
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
@@ -58,9 +61,33 @@ class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
                     newsArticleAdapter.submitList(result.data)
                 }
             }
+            swipeRefreshLayout.setOnRefreshListener {
+                viewModel.onManualRefresh()
+            }
+            buttonRetry.setOnClickListener {
+                viewModel.onManualRefresh()
+            }
         }
 
+        setHasOptionsMenu(true)
     }
 
+    override fun onStart() {
+        super.onStart()
+        viewModel.onStart()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_breaking_news,menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem) =
+        when(item.itemId) {
+            R.id.action_refresh -> {
+                viewModel.onManualRefresh()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+    }
 
 }
