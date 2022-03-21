@@ -15,6 +15,12 @@ class BookmarksViewModel @Inject constructor(
     private val repository: NewsRepository
 ) : ViewModel() {
 
+    /**
+     * Getting all the bookmark articles from the database and converting into a state flow
+     * We use view-model scope because we can make sure the flow is canceled when view model is destroyed
+     * * * *
+     * We are passing it SharingStarted.Lazily because we can make sure the flow is started when the fragment is loaded
+     */
     val bookmarks = repository.getAllBookmarkedArticles()
         .stateIn(viewModelScope, SharingStarted.Lazily, null)
 

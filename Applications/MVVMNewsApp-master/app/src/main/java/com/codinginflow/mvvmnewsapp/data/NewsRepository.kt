@@ -119,6 +119,9 @@ class NewsRepository @Inject constructor(
         newsArticleDao.updateArticle(article)
     }
 
+    /**
+     * We are not using the network bound resource because we are fetching the data directly from database
+     */
     fun getAllBookmarkedArticles(): Flow<List<NewsArticle>> =
         newsArticleDao.getAllBookmarkedArticles()
 
