@@ -112,6 +112,14 @@ class BreakingNewsViewModel @Inject constructor(
         }
     }
 
+    fun onBookmarkClick(article: NewsArticle) {
+        val currentlyBookmarked = article.isBookmarked
+        val updatedArticle = article.copy(isBookmarked = !currentlyBookmarked)
+        viewModelScope.launch {
+            repository.updateArticle(updatedArticle)
+        }
+    }
+
     /**
      * Enum is a limited set of values, it can take only the values that we define inside the body
      */

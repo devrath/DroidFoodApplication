@@ -17,17 +17,19 @@ class NewsArticleViewHolder(
 
     init {
         // Position of the adapter
-        val position = bindingAdapterPosition
+
 
         binding.apply {
             // Set click listener for entire row
             root.setOnClickListener {
+                val position = bindingAdapterPosition
                 if (position != RecyclerView.NO_POSITION) {
                     onItemClick(position)
                 }
             }
             // Set click listener for a particular item  in the row
             imageViewBookmark.setOnClickListener {
+                val position = bindingAdapterPosition
                 if (position != RecyclerView.NO_POSITION) {
                     onBookmarkClick(position)
                 }

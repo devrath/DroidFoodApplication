@@ -38,10 +38,12 @@ class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
 
         val newsArticleAdapter = NewsArticleListAdapter(
             onItemClick = { article ->
-
+                val uri = Uri.parse(article.url)
+                val intent = Intent(Intent.ACTION_VIEW, uri)
+                requireActivity().startActivity(intent)
             },
             onBookmarkClick = { article ->
-
+                viewModel.onBookmarkClick(article)
             }
         )
         binding.apply {
@@ -49,6 +51,7 @@ class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
                 adapter = newsArticleAdapter
                 layoutManager = LinearLayoutManager(requireContext())
                 setHasFixedSize(true)
+                itemAnimator?.changeDuration = 0
             }
             lifecycleScope.launchWhenResumed {
                 viewModel.breakingNews.collect {
