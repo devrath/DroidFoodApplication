@@ -33,4 +33,10 @@ interface NewsArticleDao {
 
     @Update
     suspend fun updateArticle(article: NewsArticle)
+
+    @Query("SELECT * FROM news_articles WHERE isBookmarked = 1")
+    fun getAllBookmarkedArticles(): Flow<List<NewsArticle>>
+
+    @Query("UPDATE news_articles SET isBookmarked = 0")
+    suspend fun resetAllBookmarks()
 }
