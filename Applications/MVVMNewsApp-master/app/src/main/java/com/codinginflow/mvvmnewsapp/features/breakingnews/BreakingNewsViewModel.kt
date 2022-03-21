@@ -9,6 +9,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
+import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 /**
@@ -26,6 +27,14 @@ class BreakingNewsViewModel @Inject constructor(
     private val repository: NewsRepository
 ) : ViewModel() {
 
+    init {
+        viewModelScope.launch {
+            repository.deleteNonBookmarkedArticlesOlderThan(
+                System.currentTimeMillis() - TimeUnit.DAYS.toMillis(7)
+            )
+        }
+    }
+
     /**
      * Fragment should not be able to add values into the channel instead it should only be able to take value from the channel
      * Turning into the flow, the fragment can't put anything into it
@@ -42,7 +51,7 @@ class BreakingNewsViewModel @Inject constructor(
      * * Receiver can suspend if there are no values present in channel
      * * We can turn the channel later in to a flow for usage
      */
-    private val refreshTriggerChannel = Channel<Unit>()
+    private val refreshTriggerChannel = Channel<Refresh>()
     // Unlike normal flow once it is sent and then it is gone : -> Also called as hot data flow since its sends data even if there is collector or not
     private val refreshTrigger = refreshTriggerChannel.receiveAsFlow()
 
@@ -56,8 +65,9 @@ class BreakingNewsViewModel @Inject constructor(
      * *
      * flatMapLatest -> Latest means it always cancels old one and gives new one when called
      */
-    val breakingNews = refreshTrigger.flatMapLatest {
+    val breakingNews = refreshTrigger.flatMapLatest { refresh ->
         repository.getBreakingNews(
+            refresh == Refresh.FORCE,
             onFetchSuccess = {
                 pendingScrollToTopAfterRefresh = true
             },
@@ -84,7 +94,7 @@ class BreakingNewsViewModel @Inject constructor(
             // If we are already loading, we should not be refreshing immediately until loading is completed
             if(breakingNews.value !is Resource.Loading){
                 // It doesn't carry any data, It is just a signal
-                refreshTriggerChannel.send(Unit)
+                refreshTriggerChannel.send(Refresh.FORCE)
             }
         }
     }
@@ -97,11 +107,19 @@ class BreakingNewsViewModel @Inject constructor(
             // If we are already loading, we should not be refreshing immediately until loading is completed
             if(breakingNews.value !is Resource.Loading){
                 // It doesn't carry any data, It is just a signal
-                refreshTriggerChannel.send(Unit)
+                refreshTriggerChannel.send(Refresh.NORMAL)
             }
         }
     }
 
+    /**
+     * Enum is a limited set of values, it can take only the values that we define inside the body
+     */
+    enum class Refresh { FORCE , NORMAL }
+
+    /**
+     * Difference between the sealed class and enum is that enum cannot hold data but sealed class can hold data
+     */
     sealed class Event {
         data class ShowErrorMessage(val error: Throwable) : Event()
     }

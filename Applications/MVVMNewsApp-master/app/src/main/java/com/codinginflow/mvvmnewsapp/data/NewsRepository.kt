@@ -7,6 +7,7 @@ import com.codinginflow.mvvmnewsapp.util.networkBoundResource
 import kotlinx.coroutines.flow.Flow
 import retrofit2.HttpException
 import java.io.IOException
+import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 /**
@@ -28,6 +29,7 @@ class NewsRepository @Inject constructor(
      * This is a cold flow: -> This will be executed only when it is called and not in other scenario
      */
     fun getBreakingNews(
+        forceRefresh : Boolean,
         onFetchFailed : (Throwable) -> Unit,
         onFetchSuccess : () -> Unit
     ) : Flow<Resource<List<NewsArticle>>> =
@@ -79,6 +81,24 @@ class NewsRepository @Inject constructor(
                     newsArticleDao.insertBreakingNews(breakingNews)
                 }
             },
+            shouldFetch = { cachedArticles ->
+                if(forceRefresh){
+                    // This is from the functionality of swipe to refresh
+                    true
+                }else{
+                    /**
+                     * This is used to check if the data set is too old and then fetch new data set from the web
+                     */
+                    val sortedArticles = cachedArticles.sortedBy { article ->
+                        article.updatedAt
+                    }
+                    val oldestTimeStamp = sortedArticles.firstOrNull()?.updatedAt
+                    val needsRefresh = oldestTimeStamp == null
+                            || oldestTimeStamp < System.currentTimeMillis() -
+                            TimeUnit.MINUTES.toMillis(5)
+                    needsRefresh
+                }
+            },
             onFetchFailed = { t ->
                 // Transfer the control back to the view model
                 if (t !is HttpException && t !is IOException) {
@@ -91,5 +111,8 @@ class NewsRepository @Inject constructor(
 
         )
 
+    suspend fun deleteNonBookmarkedArticlesOlderThan(timeStampInMillis:Long){
+        newsArticleDao.deleteNonBookMarkedArticlesOlderThan(timeStampInMillis)
+    }
 
 }
