@@ -209,6 +209,7 @@ class SearchNewsFragment : Fragment(R.layout.fragment_search_news),
 
     override fun onDestroyView() {
         super.onDestroyView()
+        // Destroy strong reference from adapter to the recycler view 
         binding.recyclerView.adapter = null
         currentBinding = null
     }
