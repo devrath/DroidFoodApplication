@@ -1,5 +1,8 @@
 package com.codinginflow.mvvmnewsapp.data
 
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.PagingData
 import androidx.room.withTransaction
 import com.codinginflow.mvvmnewsapp.api.NewsApi
 import com.codinginflow.mvvmnewsapp.util.Resource
@@ -111,22 +114,30 @@ class NewsRepository @Inject constructor(
 
         )
 
-    suspend fun deleteNonBookmarkedArticlesOlderThan(timeStampInMillis:Long){
-        newsArticleDao.deleteNonBookMarkedArticlesOlderThan(timeStampInMillis)
-    }
+    fun getSearchResultsPaged(
+        query: String,
+        refreshOnInit: Boolean
+    ): Flow<PagingData<NewsArticle>> =
+        Pager(
+            // Value we pass here is used in remote mediator as state page size
+            config = PagingConfig(pageSize = 20, maxSize = 200),
+            remoteMediator = SearchNewsRemoteMediator(query, newsApi, newsArticleDb, refreshOnInit),
+            pagingSourceFactory = { newsArticleDao.getSearchResultArticlesPaged(query) }
+        ).flow
+
+    fun getAllBookmarkedArticles(): Flow<List<NewsArticle>> =
+        newsArticleDao.getAllBookmarkedArticles()
 
     suspend fun updateArticle(article: NewsArticle) {
         newsArticleDao.updateArticle(article)
     }
 
-    /**
-     * We are not using the network bound resource because we are fetching the data directly from database
-     */
-    fun getAllBookmarkedArticles(): Flow<List<NewsArticle>> =
-        newsArticleDao.getAllBookmarkedArticles()
-
     suspend fun resetAllBookmarks() {
         newsArticleDao.resetAllBookmarks()
+    }
+
+    suspend fun deleteNonBookmarkedArticlesOlderThan(timestampInMillis: Long) {
+        newsArticleDao.deleteNonBookmarkedArticlesOlderThan(timestampInMillis)
     }
 
 }
