@@ -23,7 +23,7 @@ This repository contains multiple projects on how to fetch data from a remote se
 
 
 <p align="center">
-<a><img src="https://github.com/devrath/droid-offline-application/blob/main/images/block_diagram.png"></a>
+<a><img src="https://github.com/devrath/droid-offline-application/blob/main/images/block_display.png"></a>
 </p>
 
 
