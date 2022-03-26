@@ -98,6 +98,9 @@ class SearchNewsRemoteMediator(
         }
     }
 
+    /**
+     * For handling process death
+     */
     override suspend fun initialize(): InitializeAction {
         return if (refreshOnInit) {
             InitializeAction.LAUNCH_INITIAL_REFRESH
