@@ -20,6 +20,11 @@ This repository contains multiple projects on how to fetch data from a remote se
 | --- |
 | [```Tools used in project```](https://github.com/devrath/DroidFoodApplication/wiki/Tools-used-in-project) |
 
+<p align="center">
+<a><img src="https://github.com/devrath/droid-offline-application/blob/main/images/block_diagram.png"></a>
+</p>
+
+
 
 <p align="center">
 <a><img src="https://forthebadge.com/images/badges/built-for-android.svg"></a>
