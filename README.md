@@ -19,6 +19,8 @@ This repository contains multiple projects on how to fetch data from a remote se
 | **Documentation links of Wiki is present below** |
 | --- |
 | [```Tools used in project```](https://github.com/devrath/DroidFoodApplication/wiki/Tools-used-in-project) |
+| [```Concepts used in application```](https://github.com/devrath/droid-offline-application/wiki/Concepts-involved-in-application) |
+
 
 <p align="center">
 <a><img src="https://github.com/devrath/droid-offline-application/blob/main/images/block_diagram.png"></a>
