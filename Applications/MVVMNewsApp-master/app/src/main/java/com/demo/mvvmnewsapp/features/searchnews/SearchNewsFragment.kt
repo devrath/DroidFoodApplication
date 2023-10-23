@@ -166,6 +166,8 @@ class SearchNewsFragment : Fragment(R.layout.fragment_search_news),
                                 viewModel.newQueryInProgress = false
                                 viewModel.pendingScrollToTopAfterRefresh = false
                             }
+
+                            else -> {}
                         }
                     }
             }
